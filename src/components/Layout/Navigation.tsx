@@ -3,6 +3,7 @@ import styled from "styled-components";
 import IconWrapper from "../Wrappers/IconWrapper";
 import { BsFillMusicPlayerFill } from "react-icons/bs";
 import SearchBar from "../Generic/SearchBar";
+import { Link, NavLink } from "react-router-dom";
 const Nav = styled.nav`
   color: var(--color-white);
   background-color: var(--color-grey-dark);
@@ -16,6 +17,22 @@ const NavBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+const Lnk = styled(NavLink)`
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.4s;
+  padding: 0.6rem 0.9rem;
+  border-radius: 5px;
+  &.active {
+    background-color: var(--color-red);
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+  &:hover {
+    color: var(--color-red-light);
+  }
 `;
 const NavUl = styled.ul`
   display: flex;
@@ -41,11 +58,19 @@ const Navigation = () => {
         <SearchBar />
 
         <NavUl>
-          <NavLi>musicas</NavLi>
-          <NavLi>albuns</NavLi>
-          <NavLi>mixtapes</NavLi>
-          <NavLi>eps</NavLi>
-          <NavLi>gêneros</NavLi>
+          <NavLi>
+            <Lnk to="/musics">Musicas</Lnk>
+          </NavLi>
+          <NavLi>
+            <Lnk to="/albuns">Albuns</Lnk>
+          </NavLi>
+          <NavLi>
+            <Lnk to="/mixtapes">Mixtapes</Lnk>
+          </NavLi>
+          <NavLi>
+            <Lnk to="/eps">eps</Lnk>
+          </NavLi>
+          <NavLi>generos</NavLi>
         </NavUl>
       </NavBar>
     </Nav>
