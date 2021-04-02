@@ -3,7 +3,7 @@ import styled from "styled-components";
 import IconWrapper from "../Wrappers/IconWrapper";
 import { BsFillMusicPlayerFill } from "react-icons/bs";
 import SearchBar from "../Generic/SearchBar";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 const Nav = styled.nav`
   color: var(--color-white);
   background-color: var(--color-grey-dark);
