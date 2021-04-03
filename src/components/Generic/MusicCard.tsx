@@ -24,6 +24,8 @@ const Card = styled.div`
   transition: all 0.4s;
   &:hover {
     box-shadow: var(--morph-shadow-hov);
+    color: var(--color-red);
+    cursor: pointer;
   }
   &:hover img {
     filter: blur(2px);
@@ -40,6 +42,7 @@ const Image = styled.img`
   display: inline-block;
   width: 100%;
   border-radius: 10px;
+  backface-visibility: hidden;
   transition: all 0.3s;
 `;
 const TextSpace = styled.div`
@@ -58,6 +61,7 @@ const MusicCard = ({ title, artist, imageUrl }: Props) => {
       <Image
         src={"http://localhost:1337" + imageUrl}
         alt={artist + " " + title}
+        loading="lazy"
       />
       <Cta page={title} />
       <TextSpace>
