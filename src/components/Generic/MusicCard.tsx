@@ -12,14 +12,18 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: var(--color-light-1);
   padding: 2rem;
   font-size: 1.3rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   padding: 1.6rem;
 
   margin: 1rem;
   border-radius: 10px;
+  box-shadow: var(--morph-shadow);
+  transition: all 0.4s;
+  &:hover {
+    box-shadow: var(--morph-shadow-hov);
+  }
   &:hover img {
     filter: blur(2px);
     transform: scale(1.03);

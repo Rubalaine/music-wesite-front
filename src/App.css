@@ -3,8 +3,14 @@
   --color-blak: #000;
   --color-grey-light: #e2e2e2;
   --color-grey-dark: #191919;
-  --color-red: #DA0F47;
+  --color-red: #da0f47;
   --color-red-light: #fd5f8c;
+  --color-light: #e0e5ec;
+  --color-light-1: #ebeef3;
+  --morph-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  --morph-shadow-hov: 9px 9px 16px rgba(140, 162, 196, 0.6),
+    -9px -9px 16px rgba(238, 238, 238, 0.5);
 }
 * {
   box-sizing: border-box;
@@ -17,7 +23,7 @@ body {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   -webkit-font-smooth: antialiased;
-  background-color: var(--color-white);
+  background-color: var(--color-light);
   font-family: "Lato", sans-serif;
 }
 html {
