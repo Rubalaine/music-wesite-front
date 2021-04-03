@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import MusicCard from "../components/Generic/MusicCard";
 import MainContainer from "../components/Wrappers/MainContainer";
 import SideContainer from "../components/Wrappers/SideContainer";
-import axios from "axios";
+import TopList from "../components/Layout/TopList";
+import RecentList from "../components/Layout/RecentList";
 /**
  * TODO:
  * will be divided in part
@@ -16,33 +15,17 @@ import axios from "axios";
  *  */
 const WP = styled.div`
   display: flex;
+  align-items: flex-start;
 `;
 const Home = () => {
-  const [projects, setProjects] = useState<IProjectsResponse[]>([]);
-  useEffect(() => {
-    axios
-      .get<IProjectsResponse[]>("http://localhost:1337/projectos")
-      .then(({ data }) => {
-        console.log(data);
-        setProjects(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
   return (
     <WP>
       <MainContainer>
-        {projects.map((project) => (
-          <MusicCard
-            key={project.id}
-            title={project.titulo}
-            imageUrl={project.cover.url}
-            artist={project.artista.nome}
-          />
-        ))}
+        <RecentList />
       </MainContainer>
-      <SideContainer>top chart</SideContainer>
+      <SideContainer>
+        <TopList />
+      </SideContainer>
     </WP>
   );
 };
