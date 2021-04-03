@@ -25,7 +25,6 @@ const Button2 = styled(Link)`
   background-color: var(--color-red);
   padding: 0.7rem;
   border-radius: 40px;
-  transition: opacity 0.7s, transform 0.5s;
   align-self: center;
 `;
 export const Bta = ({ page }: Props) => {

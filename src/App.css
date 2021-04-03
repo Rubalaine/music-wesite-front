@@ -24,7 +24,7 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smooth: antialiased;
   background-color: var(--color-light);
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 html {
   font-size: 62.5%;

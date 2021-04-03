@@ -6,7 +6,7 @@ export const shakeWell = keyframes`
             }
   
             25% {
-                transform: rotate(-4deg);
+                transform: rotate(-22deg);
             }
   
             50% {
@@ -14,7 +14,7 @@ export const shakeWell = keyframes`
             }
   
             75% {
-                transform: rotate(4deg);
+                transform: rotate(22deg);
             }  
             100% {
                 transform: rotate(0deg);

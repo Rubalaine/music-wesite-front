@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { shakeWell } from "../Utils/animations";
 import { Bta } from "./Cta";
+import Heading from "./../Typography/Heading";
+import Paragraph from "./../Typography/Paragraph";
 
 interface Props {
   title: string;
@@ -21,6 +23,7 @@ const Card = styled.div`
   transition: all 0.4s;
   &:hover {
     box-shadow: var(--morph-shadow-hov);
+    color: var(--color-red);
   }
   &:hover a {
     animation: ${shakeWell} 0.4s;
@@ -48,8 +51,10 @@ const TopCard = ({ title, artist, imageUrl }: Props) => {
         alt={artist + " " + title}
       />
       <TextSpace>
-        <h3>{title}</h3>
-        <p>{artist}</p>
+        <Heading size="sm">{title}</Heading>
+        <Paragraph size="sm" weight="thin">
+          {artist}
+        </Paragraph>
       </TextSpace>
       <Bta page="/" />
     </Card>

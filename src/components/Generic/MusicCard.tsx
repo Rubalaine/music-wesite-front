@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Paragraph from "../Typography/Paragraph";
 import Cta from "./Cta";
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const Card = styled.div`
   }
   &:hover img {
     filter: blur(2px);
-    transform: scale(1.03);
+    /* transform: scale(1.03); */
   }
   &:hover a {
     visibility: visible;
@@ -40,6 +41,9 @@ const Image = styled.img`
   width: 100%;
   border-radius: 10px;
   transition: all 0.3s;
+`;
+const TextSpace = styled.div`
+  width: 100%;
 `;
 /**
  * TODO:
@@ -56,9 +60,12 @@ const MusicCard = ({ title, artist, imageUrl }: Props) => {
         alt={artist + " " + title}
       />
       <Cta page={title} />
-      <p>
-        {title} - {artist}
-      </p>
+      <TextSpace>
+        <Paragraph>{title}</Paragraph>
+        <Paragraph weight="thin" size="sm">
+          {artist}
+        </Paragraph>
+      </TextSpace>
     </Card>
   );
 };
