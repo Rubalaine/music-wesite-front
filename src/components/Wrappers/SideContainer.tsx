@@ -4,7 +4,6 @@ interface Props {
   children: React.ReactNode;
 }
 const Container = styled.aside`
-  background-color: var(--color-red);
   flex-shrink: 1;
   width: 65rem;
 `;
