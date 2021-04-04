@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navigation from "./components/Layout/Navigation";
 import AppWrapper from "./components/Wrappers/AppWrapper";
@@ -12,12 +12,26 @@ import MainContainer from "./components/Wrappers/MainContainer";
 import Sider from "./components/Wrappers/Sider";
 import SideContainer from "./components/Wrappers/SideContainer";
 import TopList from "./components/Layout/TopList";
+import HamburguerMenu from "./components/Layout/HamburguerMenu";
+import SideNav from "./components/Layout/SideNav";
 const App = () => {
+  const [showNav, setShowNav] = useState(false);
+  const handleClick = () => {
+    setShowNav(!showNav);
+  };
+  const removeNav = () => {
+    setShowNav(false);
+  };
   return (
     <Router>
       <Navigation />
-      <AppWrapper>
-        <Sider>
+      <SideNav visible={showNav} hide={removeNav} />
+      {/* <HamburguerMenu showNav={showNav} setClicked={handleClick} /> */}
+
+      <AppWrapper showNav={showNav} >
+        <HamburguerMenu showNav={showNav} setClicked={handleClick} />
+
+        <Sider remove={removeNav}>
           <MainContainer>
             <Route path="/" exact component={Home} />
             <Route path="/musics" component={Musics} />

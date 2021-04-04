@@ -12,6 +12,9 @@ const Nav = styled.nav`
   left: 0;
   width: 100%;
   z-index: 69;
+  @media screen and (max-width: 780px) {
+    display: none;
+  }
 `;
 const NavBar = styled.div`
   max-width: 980px;

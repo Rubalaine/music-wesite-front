@@ -32,8 +32,9 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smooth: antialiased;
   -webkit-tap-highlight-color: transparent;
-  background-color: var(--color-light);
+  background-color: var(--color-grey-dark);
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 html {
   font-size: 62.5%;
