@@ -1,8 +1,5 @@
-import MainContainer from "../components/Wrappers/MainContainer";
-import SideContainer from "../components/Wrappers/SideContainer";
-import TopList from "../components/Layout/TopList";
 import RecentList from "../components/Layout/RecentList";
-import Sider from "../components/Wrappers/Sider";
+import Heading from "../components/Typography/Heading";
 /**
  * TODO:
  * will be divided in part
@@ -16,15 +13,10 @@ import Sider from "../components/Wrappers/Sider";
 
 const Home = () => {
   return (
-    <Sider>
-      <MainContainer>
-        <h2>Adicionadas recentemente</h2>
-        <RecentList />
-      </MainContainer>
-      <SideContainer>
-        <TopList />
-      </SideContainer>
-    </Sider>
+    <>
+      <Heading>Adicionadas recentemente</Heading>
+      <RecentList />
+    </>
   );
 };
 
