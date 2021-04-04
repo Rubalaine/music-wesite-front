@@ -5,6 +5,8 @@ interface Props {
 }
 const Container = styled.aside`
   flex-shrink: 1;
+  position: sticky;
+  top: 8.5rem;
   /* width: 65rem; */
 `;
 const SideContainer = ({ children }: Props) => {
