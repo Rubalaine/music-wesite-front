@@ -1,8 +1,8 @@
-import styled from "styled-components";
 import MainContainer from "../components/Wrappers/MainContainer";
 import SideContainer from "../components/Wrappers/SideContainer";
 import TopList from "../components/Layout/TopList";
 import RecentList from "../components/Layout/RecentList";
+import Sider from "../components/Wrappers/Sider";
 /**
  * TODO:
  * will be divided in part
@@ -13,20 +13,18 @@ import RecentList from "../components/Layout/RecentList";
  * and top albums
  *
  *  */
-const WP = styled.div`
-  display: flex;
-  align-items: flex-start;
-`;
+
 const Home = () => {
   return (
-    <WP>
+    <Sider>
       <MainContainer>
+        <h2>Adicionadas recentemente</h2>
         <RecentList />
       </MainContainer>
       <SideContainer>
         <TopList />
       </SideContainer>
-    </WP>
+    </Sider>
   );
 };
 
