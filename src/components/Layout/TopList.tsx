@@ -10,7 +10,9 @@ const TopList = () => {
   const [projects, setProjects] = useState<IProjectsResponse[]>([]);
   useEffect(() => {
     axios
-      .get<IProjectsResponse[]>("http://localhost:1337/projectos")
+      .get<IProjectsResponse[]>(
+        "http://localhost:1337/projectos?_limit=5&categoria=musica"
+      )
       .then(({ data }) => {
         console.log(data);
         setProjects(data);
@@ -23,8 +25,9 @@ const TopList = () => {
     <>
       <h2>Top 5 Musicas mais populares</h2>
       <List>
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <TopCard
+            position={index + 1}
             key={project.id}
             title={project.titulo}
             imageUrl={project.cover.url}

@@ -9,11 +9,13 @@ interface Props {
   title: string;
   artist: string;
   imageUrl: string;
+  position: number;
 }
 
 const Card = styled.div`
+  position: relative;
   cursor: pointer;
-  width: 100%;
+  min-width: 27rem;
   background-color: var(--color-light-1);
   padding: 1rem;
   display: flex;
@@ -43,13 +45,33 @@ const Image = styled.img`
 const TextSpace = styled.div`
   margin-right: auto;
 `;
-const TopCard = ({ title, artist, imageUrl }: Props) => {
+const Rank = styled.span`
+  display: inline-block;
+  border-radius: 5px;
+  background-color: ${({ position }: { position: number }) =>
+    "var(--color-rank-" + position + ")"};
+  color: var(--color-white);
+  padding: 0 0.3rem;
+  position: absolute;
+  top: -0.4rem;
+  left: -0.4rem;
+  transform: skewX(20deg);
+  & > * {
+    transform: skewX(-20deg);
+  }
+`;
+const TopCard = ({ title, artist, imageUrl, position }: Props) => {
   return (
     <Card>
       <Image
         src={"http://localhost:1337" + imageUrl}
         alt={artist + " " + title}
       />
+      <Rank position={position}>
+        <Heading size="sm" weight="bold">
+          #{position}
+        </Heading>
+      </Rank>
       <TextSpace>
         <Heading size="sm">{title}</Heading>
         <Paragraph size="sm" weight="thin">
