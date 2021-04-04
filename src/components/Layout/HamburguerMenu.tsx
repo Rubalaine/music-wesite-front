@@ -23,7 +23,7 @@ const Hamburguer = styled.nav`
   transform: translateX(-50%);
   color: white;
   padding: 0.5rem 1.5rem;
-  border-radius: 10px;
+  border-radius: 25px;
   justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 780px) {
