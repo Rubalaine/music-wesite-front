@@ -68,7 +68,7 @@ const Navigation = () => {
             <Lnk to="/mixtapes">Mixtapes</Lnk>
           </NavLi>
           <NavLi>
-            <Lnk to="/">eps</Lnk>
+            <Lnk exact to="/">eps</Lnk>
           </NavLi>
           <NavLi>generos</NavLi>
         </NavUl>

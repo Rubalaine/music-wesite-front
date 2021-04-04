@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Card = styled.div`
-  width: 18rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,7 @@ const Card = styled.div`
   font-size: 1.3rem;
   padding: 1.6rem;
 
-  margin: 1rem;
+  /* margin: 1rem; */
   border-radius: 10px;
   box-shadow: var(--morph-shadow);
   transition: all 0.4s;

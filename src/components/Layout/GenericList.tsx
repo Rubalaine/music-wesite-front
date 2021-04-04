@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import MusicCard from "../Generic/MusicCard";
-import GridCards from "../Wrappers/GridCards";
-const RecentList = () => {
+import GenericCard from "../Generic/GenericCard";
+
+
+const GenericList = () => {
   const [projects, setProjects] = useState<IProjectsResponse[]>([]);
   useEffect(() => {
     axios
@@ -17,18 +18,17 @@ const RecentList = () => {
   }, []);
   return (
     <>
-      <GridCards>
-        {projects.map((project) => (
-          <MusicCard
-            key={project.id}
-            title={project.titulo}
-            imageUrl={project.cover.url}
-            artist={project.artista.nome}
-          />
-        ))}
-      </GridCards>
+      {projects.map((project) => (
+        <GenericCard
+          category={project.categoria}
+          key={project.id}
+          title={project.titulo}
+          imageUrl={project.cover.url}
+          artist={project.artista.nome}
+        />
+      ))}
     </>
   );
 };
 
-export default RecentList;
+export default GenericList;

@@ -8,19 +8,24 @@ const Search = styled.form`
 const Input = styled.input`
   border: none;
   background-color: inherit;
-  border-bottom: 1px solid var(--color-white);
+  /* border-bottom: 1px solid var(--color-white); */
+  background-color: var(--color-black-1);
   color: var(--color-white);
-  padding: 0.8rem;
-  width: 25rem;
+  padding: 0.8rem 1.3rem;
+  width: 29rem;
   font-family: inherit;
   font-weight: 300;
   font-size: 1.5rem;
-  margin-right: -2.5rem;
+  margin-right: -3rem;
+  border-radius: 10px;
+  transition: all 0.4s;
   &::placeholder {
     color: inherit;
   }
   &:focus {
     outline: none;
+  background-color: var(--color-black-2);
+
   }
 `;
 const SearchBar = () => {
