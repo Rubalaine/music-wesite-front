@@ -3,10 +3,15 @@ import styled from "styled-components";
 import IconWrapper from "../Wrappers/IconWrapper";
 import { BsFillMusicPlayerFill } from "react-icons/bs";
 import SearchBar from "../Generic/SearchBar";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Nav = styled.nav`
   color: var(--color-white);
   background-color: var(--color-grey-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 69;
 `;
 const NavBar = styled.div`
   max-width: 980px;
@@ -68,7 +73,9 @@ const Navigation = () => {
             <Lnk to="/mixtapes">Mixtapes</Lnk>
           </NavLi>
           <NavLi>
-            <Lnk exact to="/">eps</Lnk>
+            <Lnk exact to="/">
+              eps
+            </Lnk>
           </NavLi>
           <NavLi>generos</NavLi>
         </NavUl>
