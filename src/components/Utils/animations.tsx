@@ -20,3 +20,11 @@ export const shakeWell = keyframes`
                 transform: rotate(0deg);
             }
 `;
+export const Loading = keyframes`
+ 0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
