@@ -5,7 +5,7 @@ interface Props {
 }
 const Container = styled.aside`
   flex-shrink: 1;
-  width: 65rem;
+  /* width: 65rem; */
 `;
 const SideContainer = ({ children }: Props) => {
   return <Container>{children}</Container>;
