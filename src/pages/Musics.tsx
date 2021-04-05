@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GenericList from "../components/Layout/GenericList";
 import Heading from "../components/Typography/Heading";
 
@@ -8,6 +8,9 @@ import Heading from "../components/Typography/Heading";
  * stick sidebar
  */
 const Musics = () => {
+  useEffect(() => {
+    document.title = "Musicas | Musix";
+  }, []);
   return (
     <>
       <Heading>Ultimas Musicas</Heading>

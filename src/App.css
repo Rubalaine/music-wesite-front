@@ -32,7 +32,7 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smooth: antialiased;
   -webkit-tap-highlight-color: transparent;
-  background-color: var(--color-grey-dark);
+  background-color: var(--color-light);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }

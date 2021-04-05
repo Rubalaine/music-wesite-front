@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import GenericList from "../components/Layout/GenericList";
 import Heading from "../components/Typography/Heading";
 
@@ -7,6 +8,9 @@ import Heading from "../components/Typography/Heading";
  * stick sidebar
  */
 const Albuns = () => {
+  useEffect(() => {
+    document.title = "Musix | Albuns";
+  }, []);
   return (
     <>
       <Heading>Ultimos Albuns</Heading>

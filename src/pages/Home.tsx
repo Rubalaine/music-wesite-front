@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import RecentList from "../components/Layout/RecentList";
 import Heading from "../components/Typography/Heading";
 /**
@@ -12,6 +13,9 @@ import Heading from "../components/Typography/Heading";
  *  */
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Inicio | Musix";
+  }, []);
   return (
     <>
       <Heading>Adicionadas recentemente</Heading>
