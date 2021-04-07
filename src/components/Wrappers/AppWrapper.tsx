@@ -7,6 +7,9 @@ interface Props {
 const Wrapper = styled.div`
   position: relative;
   min-height: 100vh;
+  overflow-y: ${({ showNav }: Props) => showNav && "hidden"};
+  height: ${({ showNav }: Props) => showNav && "100vh"};
+
   max-width: 980px;
   padding: 1.5rem;
   margin: 0 auto;
