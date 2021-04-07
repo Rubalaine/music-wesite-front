@@ -83,6 +83,7 @@ const GenericCard = ({
       <Image
         src={"http://localhost:1337" + imageUrl}
         alt={artist + " " + title}
+        loading="lazy"
       />
       <CatSpan>{category}</CatSpan>
       <TextSpace>

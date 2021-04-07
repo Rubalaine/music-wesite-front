@@ -21,7 +21,7 @@ const Card = styled.div`
   height: 13rem;
   margin-top: 4rem;
   @media screen and (max-width: 550px) {
-  margin-top: 2rem;
+    margin-top: 2rem;
     height: 15rem;
   }
   &:hover {
@@ -92,6 +92,7 @@ const FeaturedCard = () => {
       <Image
         src={"http://localhost:1337" + featured?.cover.url}
         alt={featured?.artista.nome + " " + featured?.titulo}
+        loading="lazy"
       />
       <CatSpan>{featured?.categoria}</CatSpan>
       <TextSpace>
