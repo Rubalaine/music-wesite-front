@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import FeaturedCard from "../components/Generic/FeaturedCard";
 import RecentList from "../components/Layout/RecentList";
 import Heading from "../components/Typography/Heading";
 /**
@@ -18,6 +19,8 @@ const Home = () => {
   }, []);
   return (
     <>
+      <Heading>Em destaque</Heading>
+      <FeaturedCard />
       <Heading>Adicionadas recentemente</Heading>
       <RecentList />
     </>

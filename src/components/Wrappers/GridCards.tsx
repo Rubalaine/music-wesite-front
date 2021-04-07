@@ -5,7 +5,7 @@ interface Props {
 }
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
   /* justify-items: center; */
   /* align-items: stretch; */
   grid-gap: 1rem;
