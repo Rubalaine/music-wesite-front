@@ -36,11 +36,17 @@ const GenericList = ({ categoria }: Props) => {
       ) : (
         projects.map((project) => (
           <GenericCard
+            lancamento={new Date(project.lancamento).toLocaleString("pt-pt", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
             category={project.categoria}
             key={project.id}
             title={project.titulo}
             imageUrl={project.cover.url}
             artist={project.artista.nome}
+            description={project.descricao}
           />
         ))
       )}

@@ -18,7 +18,7 @@ const Hamburguer = styled.nav`
   /* bottom: 3rem; */
   /* display: flex; */
   background-color: var(--color-black);
-  width: 100%;
+  width: 90%;
   max-width: 60rem;
   left: 50%;
   transform: translateX(-50%);
@@ -43,7 +43,7 @@ const Option = styled(NavLink)`
   border: 2px solid transparent;
   transition: all 0.3s;
   &.active {
-    border-color: var(--color-red);
+    /* border-color: var(--color-red); */
   }
 `;
 const Burguer = styled.div`

@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { shakeWell } from "../Utils/animations";
-import { Bta } from "./Cta";
 import Heading from "./../Typography/Heading";
 import Paragraph from "./../Typography/Paragraph";
+import Linker from "./Linker";
+import { BsArrowRight } from "react-icons/bs";
+import IconWrapper from "../Wrappers/IconWrapper";
 
 interface Props {
   title: string;
   artist: string;
   imageUrl: string;
   category: string;
+  description: string;
+  lancamento: string;
 }
 
 const Card = styled.div`
@@ -23,12 +26,13 @@ const Card = styled.div`
   box-shadow: var(--morph-shadow);
   border-radius: 10px;
   transition: all 0.4s;
+  height: 17.4rem;
   &:hover {
     box-shadow: var(--morph-shadow-hov);
-    color: var(--color-red);
+    /* color: var(--color-red); */
   }
-  &:hover a {
-    animation: ${shakeWell} 0.4s;
+  &:hover a:hover div {
+    transform: translateX(2rem);
   }
   &:not(:last-child) {
     margin-bottom: 2rem;
@@ -43,7 +47,16 @@ const Image = styled.img`
   margin-right: 1rem;
 `;
 const TextSpace = styled.div`
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
+const Diflex = styled.div`
+  display: flex;
+  margin-top: auto;
+  width: 100%;
 `;
 const CatSpan = styled.span`
   position: absolute;
@@ -54,9 +67,17 @@ const CatSpan = styled.span`
   border-radius: 5px;
   background-color: var(--color-indigo);
   color: var(--color-white);
+
   /* top: 0; */
 `;
-const GenericCard = ({ category, title, artist, imageUrl }: Props) => {
+const GenericCard = ({
+  category,
+  description,
+  title,
+  artist,
+  lancamento,
+  imageUrl,
+}: Props) => {
   return (
     <Card>
       <Image
@@ -65,12 +86,22 @@ const GenericCard = ({ category, title, artist, imageUrl }: Props) => {
       />
       <CatSpan>{category}</CatSpan>
       <TextSpace>
-        <Heading size="sm">{title}</Heading>
+        <Heading size="sm">{artist + " - " + title}</Heading>
         <Paragraph size="sm" weight="thin">
-          {artist}
+          {lancamento}
         </Paragraph>
+        <Paragraph size="sm" weight="thin" limit={3}>
+          {description}
+        </Paragraph>
+        <Diflex>
+          <Linker to="/">
+            click here{" "}
+            <IconWrapper>
+              <BsArrowRight />
+            </IconWrapper>
+          </Linker>
+        </Diflex>
       </TextSpace>
-      <Bta page="/" />
     </Card>
   );
 };

@@ -1,7 +1,12 @@
-import React from "react";
+import styled from "styled-components";
 
-const Button = () => {
-  return <div></div>;
+interface Props {
+  children: React.ReactNode;
+}
+
+const Btn = styled.button``;
+const Button = ({ children }: Props) => {
+  return <Btn>{children}</Btn>;
 };
 
 export default Button;

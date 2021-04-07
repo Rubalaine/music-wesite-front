@@ -10,6 +10,7 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s;
 `;
 
 const IconWrapper = ({ size, children }: Props) => (

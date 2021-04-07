@@ -4,7 +4,10 @@ import { shakeWell } from "../Utils/animations";
 import { Bta } from "./Cta";
 import Heading from "./../Typography/Heading";
 import Paragraph from "./../Typography/Paragraph";
-
+/**
+ * TODO:
+ * use react-color-extractor to extract color from the image and makeit default background color of the card
+ */
 interface Props {
   title: string;
   artist: string;
@@ -23,6 +26,7 @@ const Card = styled.div`
   box-shadow: var(--morph-shadow);
   border-radius: 10px;
   transition: all 0.4s;
+ 
   &:hover {
     box-shadow: var(--morph-shadow-hov);
     color: var(--color-red);

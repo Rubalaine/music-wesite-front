@@ -1,17 +1,21 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 interface Props {
+  children: React.ReactNode;
+  to: string;
   size?: "sm" | "md" | "lg" | "xl";
   weight?: "thin" | "normal" | "bold";
-  center?: true | false;
-  children: React.ReactNode;
-  limit?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 }
-const Text = styled.p`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: ${({ limit }: Props) => limit};
-  -webkit-box-orient: vertical;
+const Lnk = styled(Link)`
+  display: flex;
+  width: 13rem;
+  font-size: inherit;
+  /* justify-content: space-between; */
+  text-decoration: none;
+  font-weight: inherit;
+  padding: 0 1.5rem;
+  border-bottom: 2px solid currentColor;
+  color: var(--color-indigo);
   font-size: ${({ size }: Props) => {
     switch (size) {
       case "sm":
@@ -38,11 +42,13 @@ const Text = styled.p`
         return 400;
     }
   }};
+  transition: all 0.4s;
+  &:active,
+  &:hover {
+    background-color: var(--color-indigo);
+    color: var(--color-white);
+  }
 `;
-const Paragraph = ({ size, center, children, weight, limit }: Props) => (
-  <Text size={size} center={center} weight={weight} limit={limit}>
-    {children}
-  </Text>
-);
+const Linker = ({ to, children }: Props) => <Lnk to={to}>{children}</Lnk>;
 
-export default Paragraph;
+export default Linker;

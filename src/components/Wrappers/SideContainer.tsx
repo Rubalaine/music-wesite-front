@@ -9,7 +9,14 @@ const Container = styled.aside`
   top: 8.5rem;
   @media screen and (max-width: 780px) {
     top: 2rem;
-
+  }
+  @media screen and (max-width: 600px) {
+    position: initial;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
   }
   /* width: 65rem; */
 `;

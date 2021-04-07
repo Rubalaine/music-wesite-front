@@ -5,6 +5,9 @@ import TopCard from "../Generic/TopCard";
 const List = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
 `;
 const TopList = () => {
   const [projects, setProjects] = useState<IProjectsResponse[]>([]);
