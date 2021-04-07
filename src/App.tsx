@@ -26,11 +26,8 @@ const App = () => {
     <Router>
       <Navigation />
       <SideNav visible={showNav} hide={removeNav} />
-      {/* <HamburguerMenu showNav={showNav} setClicked={handleClick} /> */}
-
-      <AppWrapper showNav={showNav} >
+      <AppWrapper showNav={showNav}>
         <HamburguerMenu showNav={showNav} setClicked={handleClick} />
-
         <Sider remove={removeNav}>
           <MainContainer>
             <Route path="/" exact component={Home} />

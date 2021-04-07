@@ -17,7 +17,6 @@ const GenericList = ({ categoria }: Props) => {
         `http://localhost:1337/projectos?categoria=${categoria}`
       )
       .then(({ data }) => {
-        console.log(data);
         setProjects(data);
       })
       .catch((err) => {
@@ -26,6 +25,7 @@ const GenericList = ({ categoria }: Props) => {
       .finally(() => {
         setLoading(false);
       });
+    // eslint-disable-next-line
   }, []);
   return loading ? (
     <Loader />

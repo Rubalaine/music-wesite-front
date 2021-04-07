@@ -11,7 +11,6 @@ const RecentList = () => {
     axios
       .get<IProjectsResponse[]>("http://localhost:1337/projectos")
       .then(({ data }) => {
-        console.log(data);
         setProjects(data);
       })
       .catch((err) => {

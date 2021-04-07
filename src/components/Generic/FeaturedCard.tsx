@@ -82,7 +82,6 @@ const FeaturedCard = () => {
         "http://localhost:1337/projectos?_limit=1&destaque=true"
       )
       .then(({ data }) => {
-        console.log(data[0]);
         setFeatured({ ...data[0] });
       })
       .catch((error) => {

@@ -19,7 +19,6 @@ const TopList = () => {
         "http://localhost:1337/projectos?_limit=5&categoria=musica"
       )
       .then(({ data }) => {
-        console.log(data);
         setProjects(data);
       })
       .catch((err) => {
