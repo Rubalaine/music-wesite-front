@@ -14,7 +14,7 @@ const Eps = () => {
   return (
     <>
       <Heading>Ultimos Eps</Heading>
-      <GenericList categoria="album" />
+      <GenericList categoria="eps" />
     </>
   );
 };
