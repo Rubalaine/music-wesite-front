@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TopCard from "../Generic/TopCard";
+import Heading from "../Typography/Heading";
+import Spacer from "../Utils/Spacer";
 const List = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,7 +28,8 @@ const TopList = () => {
   }, []);
   return (
     <>
-      <h2>Top 5 Musicas mais populares</h2>
+      <Heading>Top 5 Musicas mais populares</Heading>
+      <Spacer  size='sm'/>
       <List>
         {projects.map((project, index) => (
           <TopCard

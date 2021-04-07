@@ -7,7 +7,7 @@ const Page = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 8rem;
+  /* padding: 8rem; */
 `;
 
 const Rings = styled.div`

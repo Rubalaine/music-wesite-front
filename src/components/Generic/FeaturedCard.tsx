@@ -6,7 +6,7 @@ import Linker from "./Linker";
 import { BsArrowRight } from "react-icons/bs";
 import IconWrapper from "../Wrappers/IconWrapper";
 import axios from "axios";
-
+import Loader from "./../Utils/Loader";
 const Card = styled.div`
   position: relative;
   cursor: pointer;
@@ -74,7 +74,9 @@ const CatSpan = styled.span`
 `;
 const FeaturedCard = () => {
   const [featured, setFeatured] = useState<IProjectsResponse>();
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     axios
       .get<IProjectsResponse[]>(
         "http://localhost:1337/projectos?_limit=1&destaque=true"
@@ -85,34 +87,43 @@ const FeaturedCard = () => {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
   return (
     <Card>
-      <Image
-        src={"http://localhost:1337" + featured?.cover.url}
-        alt={featured?.artista.nome + " " + featured?.titulo}
-        loading="lazy"
-      />
-      <CatSpan>{featured?.categoria}</CatSpan>
-      <TextSpace>
-        <Heading size="sm">
-          {featured?.artista.nome + " - " + featured?.titulo}
-        </Heading>
-        <Paragraph size="sm" weight="thin">
-          {featured?.lancamento}
-        </Paragraph>
-        <Paragraph>A mixtape mais hot do momento</Paragraph>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Image
+            src={"http://localhost:1337" + featured?.cover.url}
+            alt={featured?.artista.nome + " " + featured?.titulo}
+            loading="lazy"
+          />
+          <CatSpan>{featured?.categoria}</CatSpan>
+          <TextSpace>
+            <Heading size="sm">
+              {featured?.artista.nome + " - " + featured?.titulo}
+            </Heading>
+            <Paragraph size="sm" weight="thin">
+              {featured?.lancamento}
+            </Paragraph>
+            <Paragraph>A mixtape mais hot do momento</Paragraph>
 
-        <Diflex>
-          <Linker to="/">
-            ler mais
-            <IconWrapper>
-              <BsArrowRight />
-            </IconWrapper>
-          </Linker>
-        </Diflex>
-      </TextSpace>
+            <Diflex>
+              <Linker to="/">
+                ler mais
+                <IconWrapper>
+                  <BsArrowRight />
+                </IconWrapper>
+              </Linker>
+            </Diflex>
+          </TextSpace>
+        </>
+      )}
     </Card>
   );
 };
