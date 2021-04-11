@@ -13,6 +13,7 @@ interface Props {
   category: string;
   description: string;
   lancamento: string;
+  id: string;
 }
 
 const Card = styled.div`
@@ -71,6 +72,7 @@ const CatSpan = styled.span`
   /* top: 0; */
 `;
 const GenericCard = ({
+  id,
   category,
   description,
   title,
@@ -95,7 +97,12 @@ const GenericCard = ({
           {description}
         </Paragraph>
         <Diflex>
-          <Linker to="/">
+          <Linker
+            to={`/project/${id}/${(title + " - " + artist).replaceAll(
+              " ",
+              "$$$"
+            )}`}
+          >
             click here{" "}
             <IconWrapper>
               <BsArrowRight />

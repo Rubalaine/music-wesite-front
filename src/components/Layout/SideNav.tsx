@@ -14,8 +14,7 @@ const Nav = styled.nav`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 69;
+  z-index: 72;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,16 +24,19 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: center;
   transition: transform 0.5s;
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
 `;
 const Lnk = styled(NavLink)`
   color: inherit;
   text-decoration: none;
   transition: all 0.4s;
-  padding: 0.6rem 0.9rem;
+  padding: 1.3rem 0.9rem;
   border-radius: 5px;
   @media screen and (max-width: 980px) {
     display: inline-block;
-    width: 20rem;
+    width: 28rem;
   }
   &.active {
     background-color: var(--color-red);
@@ -50,20 +52,14 @@ const NavUl = styled.ul`
   display: flex;
   flex-direction: column;
   color: var(--color-white);
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: 300;
   list-style-type: none;
   align-items: center;
 `;
 const NavLi = styled.li`
-  @media screen and (max-width: 980px) {
-    margin-right: 0 !important;
-    margin-top: 2rem;
-    text-align: center;
-  }
-  &:not(:last-child) {
-    margin-right: 1.5rem;
-  }
+  margin-top: 1rem;
+  text-align: center;
 `;
 const Close = styled.button`
   background-color: inherit;
@@ -75,13 +71,19 @@ const Close = styled.button`
   font-size: 1.6rem;
   font-weight: 400;
   margin-bottom: 3rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  &:focus {
+    outline: none;
+    color: var(--color-red);
+  }
 `;
 const SideNav = ({ visible, hide }: Props) => {
   return (
     <Nav visible={visible}>
       <Close onClick={hide}>
-        fechar&nbsp;&nbsp;&nbsp;&nbsp;
-        <IconWrapper>
+        <IconWrapper size={3}>
           <AiOutlineClose />
         </IconWrapper>
       </Close>

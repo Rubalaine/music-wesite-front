@@ -34,6 +34,7 @@ const TopList = () => {
           <TopCard
             position={index + 1}
             key={project.id}
+            id={project.id}
             title={project.titulo}
             imageUrl={project.cover.url}
             artist={project.artista.nome}

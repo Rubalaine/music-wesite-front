@@ -10,6 +10,8 @@ import Heading from "../components/Typography/Heading";
 const Albuns = () => {
   useEffect(() => {
     document.title = "Musix | Albuns";
+    window.scrollTo({ top: 0, behavior: `smooth` });
+
   }, []);
   return (
     <>

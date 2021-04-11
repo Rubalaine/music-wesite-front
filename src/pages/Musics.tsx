@@ -10,6 +10,7 @@ import Heading from "../components/Typography/Heading";
 const Musics = () => {
   useEffect(() => {
     document.title = "Musicas | Musix";
+    window.scrollTo({ top: 0, behavior: `smooth` });
   }, []);
   return (
     <>

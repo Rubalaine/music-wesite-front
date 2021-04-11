@@ -113,8 +113,14 @@ const FeaturedCard = () => {
             <Paragraph>A mixtape mais hot do momento</Paragraph>
 
             <Diflex>
-              <Linker to="/">
-                ler mais
+              <Linker
+                to={`/project/${featured?.id}/${(
+                  featured?.titulo +
+                  " - " +
+                  featured?.artista.nome
+                ).replaceAll(" ", "$$$")}`}
+              >
+                Baixar
                 <IconWrapper>
                   <BsArrowRight />
                 </IconWrapper>

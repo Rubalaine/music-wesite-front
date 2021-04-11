@@ -10,6 +10,7 @@ import Heading from "../components/Typography/Heading";
 const Eps = () => {
   useEffect(() => {
     document.title = "EPS | Musix";
+    window.scrollTo({ top: 0, behavior: `smooth` });
   }, []);
   return (
     <>

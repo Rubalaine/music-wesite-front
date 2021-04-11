@@ -1,11 +1,15 @@
 import styled from "styled-components";
 interface Props {
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl" | "xxl";
   weight?: "thin" | "normal" | "bold";
   center?: true | false;
   children: React.ReactNode;
 }
 const Text = styled.h2`
+  text-transform: capitalize;
+  letter-spacing: ${({ size }: Props) => {
+    return size === "xxl" ? "2px" : ".5px";
+  }};
   font-size: ${({ size }: Props) => {
     switch (size) {
       case "sm":
@@ -16,6 +20,8 @@ const Text = styled.h2`
         return 2;
       case "xl":
         return 2.5;
+      case "xxl":
+        return 4;
       default:
         return 1.8;
     }

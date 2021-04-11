@@ -15,8 +15,6 @@ const Hamburguer = styled.nav`
   position: fixed;
   z-index: 69;
   bottom: 4rem;
-  /* bottom: 3rem; */
-  /* display: flex; */
   background-color: var(--color-black);
   width: 90%;
   max-width: 60rem;

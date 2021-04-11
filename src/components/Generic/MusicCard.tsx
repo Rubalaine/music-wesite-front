@@ -1,4 +1,5 @@
 import React from "react";
+// import { navigate } from "react-router-dom";
 import styled from "styled-components";
 import Paragraph from "../Typography/Paragraph";
 import Cta from "./Cta";
@@ -6,6 +7,7 @@ interface Props {
   title: string;
   artist: string;
   imageUrl: string;
+  id: string;
 }
 
 const Card = styled.div`
@@ -17,8 +19,6 @@ const Card = styled.div`
   padding: 2rem;
   font-size: 1.3rem;
   padding: 1.6rem;
-
-  /* margin: 1rem; */
   border-radius: 10px;
   box-shadow: var(--morph-shadow);
   transition: all 0.4s;
@@ -48,22 +48,23 @@ const Image = styled.img`
 const TextSpace = styled.div`
   width: 100%;
 `;
-/**
- * TODO:
- * Make a card like spotify
- * with blur animation on hover
- * and show a button while hover
- *
- */
-const MusicCard = ({ title, artist, imageUrl }: Props) => {
+
+const MusicCard = ({ id, title, artist, imageUrl }: Props) => {
   return (
-    <Card>
+    <Card
+    // onClick={navigate(`/project/${id}/${(title + " " + artist).replaceAll(" ", "$$$")}`)}
+    >
       <Image
         src={"http://localhost:1337" + imageUrl}
         alt={artist + " " + title}
         loading="lazy"
       />
-      <Cta page={title} />
+      <Cta
+        page={`/project/${id}/${(title + " - " + artist).replaceAll(
+          " ",
+          "$$$"
+        )}`}
+      />
       <TextSpace>
         <Paragraph>{title}</Paragraph>
         <Paragraph weight="thin" size="sm">

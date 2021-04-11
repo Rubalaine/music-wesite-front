@@ -27,6 +27,7 @@ const RecentList = () => {
       <GridCards>
         {projects.map((project) => (
           <MusicCard
+          id={project.id}
             key={project.id}
             title={project.titulo}
             imageUrl={project.cover.url}

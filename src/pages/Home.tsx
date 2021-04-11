@@ -17,6 +17,7 @@ import Spacer from "../components/Utils/Spacer";
 const Home = () => {
   useEffect(() => {
     document.title = "Inicio | Musix";
+    window.scrollTo({ top: 0, behavior: `smooth` });
   }, []);
   return (
     <>

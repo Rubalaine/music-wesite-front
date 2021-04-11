@@ -13,6 +13,7 @@ interface Props {
   artist: string;
   imageUrl: string;
   position: number;
+  id: string;
 }
 
 const Card = styled.div`
@@ -26,7 +27,7 @@ const Card = styled.div`
   box-shadow: var(--morph-shadow);
   border-radius: 10px;
   transition: all 0.4s;
- 
+
   &:hover {
     box-shadow: var(--morph-shadow-hov);
     color: var(--color-red);
@@ -64,7 +65,7 @@ const Rank = styled.span`
     transform: skewX(-20deg);
   }
 `;
-const TopCard = ({ title, artist, imageUrl, position }: Props) => {
+const TopCard = ({ id, title, artist, imageUrl, position }: Props) => {
   return (
     <Card>
       <Image
@@ -82,7 +83,12 @@ const TopCard = ({ title, artist, imageUrl, position }: Props) => {
           {artist}
         </Paragraph>
       </TextSpace>
-      <Bta page="/" />
+      <Bta
+        page={`/project/${id}/${(title + " - " + artist).replaceAll(
+          " ",
+          "$$$"
+        )}`}
+      />
     </Card>
   );
 };

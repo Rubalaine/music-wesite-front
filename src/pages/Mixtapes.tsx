@@ -10,6 +10,7 @@ import Heading from "../components/Typography/Heading";
 const Mixtapes = () => {
   useEffect(() => {
     document.title = "Mixtapes | Musix";
+    window.scrollTo({ top: 0, behavior: `smooth` });
   }, []);
   return (
     <>

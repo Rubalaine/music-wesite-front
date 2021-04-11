@@ -14,12 +14,12 @@
   --color-red: #da0f47;
   --color-red-light: #fd5f8c;
   --color-light: #e0e5ec;
-  --color-light-1: #ebeef3;
+  --color-light-1: #f0f3f8;
   --shadow-black-top: 0 -7px 16px rgba(0, 0, 0, 0.2);
-  --morph-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+  /* --morph-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
   --morph-shadow-hov: 9px 9px 16px rgba(140, 162, 196, 0.6),
-    -9px -9px 16px rgba(238, 238, 238, 0.5);
+    -9px -9px 16px rgba(238, 238, 238, 0.5); */
 }
 * {
   box-sizing: border-box;
@@ -60,8 +60,8 @@ html {
 }
 @media (max-width: 700px) {
   :root {
-    --morph-shadow: 9px 9px 16px rgba(140, 162, 196, 0.6),
-      -9px -9px 16px rgba(238, 238, 238, 0.5);
+    /* --morph-shadow: 9px 9px 16px rgba(140, 162, 196, 0.6),
+      -9px -9px 16px rgba(238, 238, 238, 0.5); */
   }
  
   html {

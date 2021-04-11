@@ -14,6 +14,11 @@ import SideContainer from "./components/Wrappers/SideContainer";
 import TopList from "./components/Layout/TopList";
 import HamburguerMenu from "./components/Layout/HamburguerMenu";
 import SideNav from "./components/Layout/SideNav";
+import Project from "./pages/Project";
+
+/**
+ * TODO: implement React Toast for something like anithing
+ */
 const App = () => {
   const [showNav, setShowNav] = useState(false);
   const handleClick = () => {
@@ -35,6 +40,7 @@ const App = () => {
             <Route path="/eps" component={Eps} />
             <Route path="/albuns" component={Albuns} />
             <Route path="/mixtapes" component={Mixtapes} />
+            <Route path="/project/:id/:nome" component={Project} />
           </MainContainer>
           <SideContainer>
             <TopList />
