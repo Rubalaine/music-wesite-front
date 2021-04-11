@@ -28,7 +28,7 @@ const TopList = () => {
   return (
     <>
       <Heading>Top 5 Musicas mais populares</Heading>
-      <Spacer  size='sm'/>
+      <Spacer size="sm" />
       <List>
         {projects.map((project, index) => (
           <TopCard

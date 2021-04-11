@@ -7,10 +7,8 @@ interface Props {
 const Wrapper = styled.div`
   position: relative;
   min-height: 100vh;
-
+  /* overflow: auto; */
   overflow-y: ${({ showNav }: Props) => showNav && "hidden"};
-  height: ${({ showNav }: Props) => showNav && "100vh"};
-
   max-width: 980px;
   padding: 1.5rem;
   margin: 0 auto;
@@ -22,7 +20,10 @@ const Wrapper = styled.div`
     showNav && "0 0 50px -12px rgba(0, 0, 0, 0.25)"};
   transform: ${({ showNav }: Props) => showNav && "scale(.75) translateX(39%)"};
   @media screen and (max-width: 780px) {
+    height: 100vh;
     margin-top: 0;
+    overflow: auto;
+    overflow-y: ${({ showNav }: Props) => showNav && "hidden"};
   }
   @media screen and (max-width: 550px) {
     transform: ${({ showNav }: Props) =>

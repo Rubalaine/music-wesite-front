@@ -14,7 +14,7 @@ const GenericList = ({ categoria }: Props) => {
     setLoading(true);
     axios
       .get<IProjectsResponse[]>(
-        `http://localhost:1337/projectos?categoria=${categoria}`
+        `http://192.168.43.8:1337/projectos?categoria=${categoria}`
       )
       .then(({ data }) => {
         setProjects(data);
