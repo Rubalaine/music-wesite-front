@@ -55,15 +55,12 @@ const MusicCard = ({ id, title, artist, imageUrl }: Props) => {
     // onClick={navigate(`/project/${id}/${(title + " " + artist).replaceAll(" ", "$$$")}`)}
     >
       <Image
-        src={"http://localhost:1337" + imageUrl}
+        src={"https://musically-api.herokuapp.com/" + imageUrl}
         alt={artist + " " + title}
         loading="lazy"
       />
       <Cta
-        page={`/project/${id}/${(title + " - " + artist).replaceAll(
-          " ",
-          "$$$"
-        )}`}
+        page={`/project/${id}/${(title + " - " + artist).replace(/ /g, "$$$")}`}
       />
       <TextSpace>
         <Paragraph>{title}</Paragraph>

@@ -16,9 +16,12 @@ import HamburguerMenu from "./components/Layout/HamburguerMenu";
 import SideNav from "./components/Layout/SideNav";
 import Project from "./pages/Project";
 
-/**
- * TODO: implement React Toast for something like anithing
- */
+//TODO adicionar paginacao para todas as listas paginaveis
+//TODO implementar fallbacks para todas as imagens
+//TODO implementar um componet de você talvez goste
+//TODO implementar CTA button para download
+//TODO adicionar data de lançamento no card do projecto
+
 const App = () => {
   const [showNav, setShowNav] = useState(false);
   const handleClick = () => {

@@ -98,7 +98,7 @@ const FeaturedCard = () => {
       ) : (
         <>
           <Image
-            src={"http://localhost:1337" + featured?.cover.url}
+            src={"https://musically-api.herokuapp.com/" + featured?.cover.url}
             alt={featured?.artista.nome + " " + featured?.titulo}
             loading="lazy"
           />
@@ -118,7 +118,7 @@ const FeaturedCard = () => {
                   featured?.titulo +
                   " - " +
                   featured?.artista.nome
-                ).replaceAll(" ", "$$$")}`}
+                ).replace(/ /g, "$$$")}`}
               >
                 Baixar
                 <IconWrapper>

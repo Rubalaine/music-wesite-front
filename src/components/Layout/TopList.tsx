@@ -16,7 +16,7 @@ const TopList = () => {
   useEffect(() => {
     axios
       .get<IProjectsResponse[]>(
-        "http://localhost:1337/projectos?_limit=5&categoria=musica"
+        "https://musically-api.herokuapp.com/projectos?_limit=5&categoria=musica"
       )
       .then(({ data }) => {
         setProjects(data);

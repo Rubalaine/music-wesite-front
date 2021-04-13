@@ -69,7 +69,7 @@ const TopCard = ({ id, title, artist, imageUrl, position }: Props) => {
   return (
     <Card>
       <Image
-        src={"http://localhost:1337" + imageUrl}
+        src={"https://musically-api.herokuapp.com/" + imageUrl}
         alt={artist + " " + title}
       />
       <Rank position={position}>
@@ -84,10 +84,7 @@ const TopCard = ({ id, title, artist, imageUrl, position }: Props) => {
         </Paragraph>
       </TextSpace>
       <Bta
-        page={`/project/${id}/${(title + " - " + artist).replaceAll(
-          " ",
-          "$$$"
-        )}`}
+        page={`/project/${id}/${(title + " - " + artist).replace(/ /g, "$$$")}`}
       />
     </Card>
   );

@@ -34,10 +34,12 @@ const Mixtapes = () => {
   const [project, setProject] = useState<IProjectsResponse>();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: `smooth` });
-    document.title = `${params.nome.replaceAll("$$", " ")}`;
+    document.title = `${params.nome.replace(/$$/g, " ")}`;
     setLoading(true);
     axios
-      .get<IProjectsResponse>(`http://localhost:1337/projectos/${params.id}`)
+      .get<IProjectsResponse>(
+        `https://musically-api.herokuapp.com/projectos/${params.id}`
+      )
       .then(({ data }) => {
         console.log(data);
 

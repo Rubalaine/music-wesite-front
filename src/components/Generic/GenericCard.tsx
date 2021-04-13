@@ -83,7 +83,7 @@ const GenericCard = ({
   return (
     <Card>
       <Image
-        src={"http://localhost:1337" + imageUrl}
+        src={"https://musically-api.herokuapp.com/" + imageUrl}
         alt={artist + " " + title}
         loading="lazy"
       />
@@ -98,8 +98,7 @@ const GenericCard = ({
         </Paragraph>
         <Diflex>
           <Linker
-            to={`/project/${id}/${(title + " - " + artist).replaceAll(
-              " ",
+            to={`/project/${id}/${(title + " - " + artist).replace(/ /g,
               "$$$"
             )}`}
           >
